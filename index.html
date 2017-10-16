@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+		
+	<title>Trivia Game (Basic)</title>
+
+	<!-- Google Fonts -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Roboto+Slab|Roboto+Condensed" rel="stylesheet"> -->
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	
+	<!-- Custom CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/> -->
+	<!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> -->
+	
+</head>
+<body>
+
+	<div class="container">
+	
+		<div class="jumbotron text-justify">
+
+			<h1>Totally Trivial Trivia!</h1><br />
+
+			<h2 class="text-primary">Time Remaining: <span id="time-remaining">30</span></h2>
+
+			<!-- Testing & Debugging -->
+			<button id="start" type="start" class="btn btn-success">Start</button>
+			<button id="pause" type="pause" class="btn btn-danger">Pause</button>
+			
+			<!-- QUESTIONS -->
+			<form>
+				<div class="form-group">
+				    <label for="Question1">What is the word for "Hello" in Spanish?</label>
+				    <input type="text" class="form-control text-primary" id="Question1">
+			  	</div>
+			  	<br />
+
+				<div class="form-group">
+					<label for="Question2">Who wrote "Don't count your chickens before they're hatched"?</label>
+					<div class="radio">
+						<label>
+							<input type="radio" name="Question2" id="question2Answer" value="Aesop">
+						  	Aesop
+						</label>
+						<label>
+						  	<input type="radio" name="Question2" value="Shakespeare">
+						  	Shakespeare
+						</label>
+						<label>
+						  	<input type="radio" name="Question2" value="Ben Franklin">
+						  	Ben Franklin
+						</label>
+						<label>
+						  	<input type="radio" name="Question2" value="Chaucer">
+						  	Chaucer
+						</label>
+						<label>
+						  	<input type="radio" name="Question2" value="Confucius">
+						  	Confucius
+						</label>
+					</div>
+				</div>
+				<br />
+
+				<div class="form-group">
+					<label for="Question3">Which kind of animal did Florence Nightingale often carry around in her pocket?</label>
+					<div class="radio">
+						<label>
+						  	<input type="radio" name="Question3" value="Kitten">
+						  	Kitten
+						</label>
+						<label>
+						  	<input type="radio" name="Question3" value="Spider">
+						  	Spider
+						</label>
+						<label>
+						  	<input type="radio" name="Question3" id="question3Answer" value="Owl">
+						  	Owl
+						</label>
+						<label>
+						  	<input type="radio" name="Question3" value="Snake">
+						  	Snake
+						</label>
+						<label>
+						  	<input type="radio" name="Question3" value="Ladybug">
+						  	Ladybug
+						</label>
+					</div>
+				</div>
+				<br />
+
+				<div class="form-group">
+					<label for="Question4">In which film do the words "I love you" save the planet earth?</label>
+					<div class="radio">
+						<label>
+						  	<input type="radio" name="Question4" value="The Day After Tomorrow">
+						  	The Day After Tomorrow
+						</label>
+						<label>
+						  	<input type="radio" name="Question4" id="question4Answer" value="The Fifth Element">
+						  	The Fifth Element
+						</label>
+						<label>
+						  	<input type="radio" name="Question4" value="Mars Attacks">
+						  	Mars Attacks
+						</label>
+						<label>
+						  	<input type="radio" name="Question4" value="P.S. I Love You">
+						  	P.S. I Love You
+						</label>
+						<label>
+						  	<input type="radio" name="Question4" value="Independence Day">
+						  	Independence Day
+						</label>
+					</div>
+				</div>
+				<br />
+
+				<div class="form-group">
+					<label for="Question5">	What does a nidoligist study?</label>
+					<div class="radio">
+						<label>
+						  	<input type="radio" name="Question5" value="Waves">
+						  	Waves
+						</label>
+						<label>
+						  	<input type="radio" name="Question5" value="Clouds">
+						  	Clouds
+						</label>
+						<label>
+						  	<input type="radio" name="Question5" id="question5Answer" value="Birds Nests">
+						  	Birds Nests
+						</label>
+						<label>
+						  	<input type="radio" name="Question5" value="Caves">
+						  	Caves
+						</label>
+						<label>
+						  	<input type="radio" name="Question5" value="Dreams">
+						  	Dreams
+						</label>
+					</div>
+				</div>
+				<br />
+				
+				<!-- Submit Button -->
+				<div id="done" class="btn btn-info">Done</div>
+
+			</form>
+			<!-- END QUESTIONS -->
+
+		</div>
+
+
+	</div>
+
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+<!-- Custom JavaScript -->
+<script type="text/javascript" src="./app.js"></script>
+
+</body>
+</html>
