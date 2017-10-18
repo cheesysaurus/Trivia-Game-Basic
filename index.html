@@ -2,19 +2,11 @@
 <html lang="en-US">
 <head>
 	<meta charset="UTF-8">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		
 	<title>Trivia Game (Basic)</title>
-
-	<!-- Google Fonts -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700|Roboto+Slab|Roboto+Condensed" rel="stylesheet"> -->
 	
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-	
-	<!-- Custom CSS -->
-	<!-- <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/> -->
-	<!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> -->
 	
 </head>
 <body>
@@ -25,133 +17,130 @@
 
 			<h1>Totally Trivial Trivia!</h1><br />
 
-			<h2 class="text-primary">Time Remaining: <span id="time-remaining">30</span></h2>
-
-			<!-- Testing & Debugging -->
-			<button id="start" type="start" class="btn btn-success">Start</button>
-			<button id="pause" type="pause" class="btn btn-danger">Pause</button>
+			<h2 class="text-primary">Time Remaining: <span id="time-remaining">40</span></h2>
+			<hr />
 			
-			<!-- QUESTIONS -->
-			<form>
-				<div class="form-group">
-				    <label for="Question1">What is the word for "Hello" in Spanish?</label>
-				    <input type="text" class="form-control text-primary" id="Question1">
-			  	</div>
-			  	<br />
-
-				<div class="form-group">
-					<label for="Question2">Who wrote "Don't count your chickens before they're hatched"?</label>
-					<div class="radio">
-						<label>
-							<input type="radio" name="Question2" id="question2Answer" value="Aesop">
-						  	Aesop
-						</label>
-						<label>
-						  	<input type="radio" name="Question2" value="Shakespeare">
-						  	Shakespeare
-						</label>
-						<label>
-						  	<input type="radio" name="Question2" value="Ben Franklin">
-						  	Ben Franklin
-						</label>
-						<label>
-						  	<input type="radio" name="Question2" value="Chaucer">
-						  	Chaucer
-						</label>
-						<label>
-						  	<input type="radio" name="Question2" value="Confucius">
-						  	Confucius
-						</label>
+			<!-- QUIZ START -->
+				    <h3>What is the word for "Hello" in Spanish?</h3>
+				    <div>
+					    <input type="radio" name="question1" id="question1A" value="0" />
+					    <label for="question1A">Chola</label>
 					</div>
-				</div>
-				<br />
-
-				<div class="form-group">
-					<label for="Question3">Which kind of animal did Florence Nightingale often carry around in her pocket?</label>
-					<div class="radio">
-						<label>
-						  	<input type="radio" name="Question3" value="Kitten">
-						  	Kitten
-						</label>
-						<label>
-						  	<input type="radio" name="Question3" value="Spider">
-						  	Spider
-						</label>
-						<label>
-						  	<input type="radio" name="Question3" id="question3Answer" value="Owl">
-						  	Owl
-						</label>
-						<label>
-						  	<input type="radio" name="Question3" value="Snake">
-						  	Snake
-						</label>
-						<label>
-						  	<input type="radio" name="Question3" value="Ladybug">
-						  	Ladybug
-						</label>
+					<div>
+					    <input type="radio" name="question1" id="question1B" value="0" />
+					    <label for="question1B">Gracias</label>
 					</div>
-				</div>
-				<br />
-
-				<div class="form-group">
-					<label for="Question4">In which film do the words "I love you" save the planet earth?</label>
-					<div class="radio">
-						<label>
-						  	<input type="radio" name="Question4" value="The Day After Tomorrow">
-						  	The Day After Tomorrow
-						</label>
-						<label>
-						  	<input type="radio" name="Question4" id="question4Answer" value="The Fifth Element">
-						  	The Fifth Element
-						</label>
-						<label>
-						  	<input type="radio" name="Question4" value="Mars Attacks">
-						  	Mars Attacks
-						</label>
-						<label>
-						  	<input type="radio" name="Question4" value="P.S. I Love You">
-						  	P.S. I Love You
-						</label>
-						<label>
-						  	<input type="radio" name="Question4" value="Independence Day">
-						  	Independence Day
-						</label>
+					<div>
+					    <input type="radio" name="question1" id="question1C" value="0" />
+					    <label for="question1C">Bueno</label>
 					</div>
-				</div>
-				<br />
-
-				<div class="form-group">
-					<label for="Question5">	What does a nidoligist study?</label>
-					<div class="radio">
-						<label>
-						  	<input type="radio" name="Question5" value="Waves">
-						  	Waves
-						</label>
-						<label>
-						  	<input type="radio" name="Question5" value="Clouds">
-						  	Clouds
-						</label>
-						<label>
-						  	<input type="radio" name="Question5" id="question5Answer" value="Birds Nests">
-						  	Birds Nests
-						</label>
-						<label>
-						  	<input type="radio" name="Question5" value="Caves">
-						  	Caves
-						</label>
-						<label>
-						  	<input type="radio" name="Question5" value="Dreams">
-						  	Dreams
-						</label>
+					<div>
+					    <input type="radio" name="question1" id="question1D" value="0" />
+					    <label for="question1D">Aloha</label>
 					</div>
-				</div>
-				<br />
+					<div>
+					    <input type="radio" name="question1" id="question1E" value="1" />
+					    <label for="question1E">Hola</label>
+					</div>
+			  		<br />
+
+					<h3>Who wrote "Don't count your chickens before they're hatched"?</h3>
+				    <div>
+					    <input type="radio" name="question2" id="question2A" value="1" />
+					    <label for="question2A">Aesop</label>
+					</div>
+					<div>
+					    <input type="radio" name="question2" id="question2B" value="0" />
+					    <label for="question2B">Shakespeare</label>
+					</div>
+					<div>
+					    <input type="radio" name="question2" id="question2C" value="0" />
+					    <label for="question2C">Benjamin Franklin</label>
+					</div>
+					<div>
+					    <input type="radio" name="question2" id="question2D" value="0" />
+					    <label for="question2D">Chaucer</label>
+					</div>
+					<div>
+					    <input type="radio" name="question2" id="question2E" value="0" />
+					    <label for="question2E">Confucius</label>
+					</div>
+			  		<br />
+
+					<h3>Which kind of animal did Florence Nightingale often carry around in her pocket?</h3>
+				    <div>
+					    <input type="radio" name="question3" id="question3A" value="0" />
+					    <label for="question3A">Kitten</label>
+					</div>
+					<div>
+					    <input type="radio" name="question3" id="question3B" value="0" />
+					    <label for="question3B">Spider</label>
+					</div>
+					<div>
+					    <input type="radio" name="question3" id="question3C" value="0" />
+					    <label for="question3C">Snake</label>
+					</div>
+					<div>
+					    <input type="radio" name="question3" id="question3D" value="1" />
+					    <label for="question3D">Owl</label>
+					</div>
+					<div>
+					    <input type="radio" name="question3" id="question3E" value="0" />
+					    <label for="question3E">Ladybug</label>
+					</div>
+			  		<br />
+
+					<h3>In which film do the words "I love you" save the planet earth?</h3>
+				    <div>
+					    <input type="radio" name="question4" id="question4A" value="0" />
+					    <label for="question4A">The Day After Tomorrow</label>
+					</div>
+					<div>
+					    <input type="radio" name="question4" id="question4B" value="1" />
+					    <label for="question4B">The Fifth Element</label>
+					</div>
+					<div>
+					    <input type="radio" name="question4" id="question4C" value="0" />
+					    <label for="question4C">Mars Attacks</label>
+					</div>
+					<div>
+					    <input type="radio" name="question4" id="question4D" value="0" />
+					    <label for="question4D">P.S. I Love You</label>
+					</div>
+					<div>
+					    <input type="radio" name="question4" id="question4E" value="0" />
+					    <label for="question4E">Beauty &amp; the Beast</label>
+					</div>
+			  		<br />
+
+					<h3>What does a nidoligist study?</h3>
+				    <div>
+					    <input type="radio" name="question5" id="question5A" value="0" />
+					    <label for="question5A">Waves</label>
+					</div>
+					<div>
+					    <input type="radio" name="question5" id="question5B" value="0" />
+					    <label for="question5B">Clouds</label>
+					</div>
+					<div>
+					    <input type="radio" name="question5" id="question5C" value="1" />
+					    <label for="question5C">Birds Nests</label>
+					</div>
+					<div>
+					    <input type="radio" name="question5" id="question5D" value="0" />
+					    <label for="question5D">Caves</label>
+					</div>
+					<div>
+					    <input type="radio" name="question5" id="question5E" value="0" />
+					    <label for="question5E">Dreams</label>
+					</div>
+			  		<br />
 				
-				<!-- Submit Button -->
-				<div id="done" class="btn btn-info">Done</div>
+			<!-- Submit Button -->
+			<input type="submit" value="Done" class="btn btn-info" onclick="submitted()">
 
-			</form>
-			<!-- END QUESTIONS -->
+			<!-- Results Display -->
+			<div id="results"></div>
 
 		</div>
 
@@ -162,11 +151,67 @@
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Bootstrap JavaScript -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- <script src="./assets/javascript/app.js"></script> -->
 
-<!-- Custom JavaScript -->
-<script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript">
+	var question1 = $("[name='question1']");
+	var question2 = $("[name='question2']");
+	var question3 = $("[name='question3']");
+	var question4 = $("[name='question4']");
+	var question5 = $("[name='question5']");
+	var questionArray = [question1, question2, question3, question4, question5];
+	var correct = 0;
+	var results = $("#results");
+
+	function submitted() {
+		for (var i = 0; i < questionArray.length; i++) {
+			for (var j = 0; j < question1.length; j++) {
+				if (parseInt(questionArray[i][j].value) === 1 &&
+					questionArray[i][j].checked) {
+					correct++;
+				}
+			}
+		}
+		for (var i = 0; i < questionArray.length; i++) {
+			for (var k = 0; k < question2.length; k++) {
+				if (parseInt(questionArray[i][k].value) === 1 &&
+					questionArray[i][k].checked) {
+					correct++;
+				}
+			}
+		}
+		for (var i = 0; i < questionArray.length; i++) {
+			for (var l = 0; l < question3.length; l++) {
+				if (parseInt(questionArray[i][l].value) === 1 &&
+					questionArray[i][l].checked) {
+					correct++;
+				}
+			}
+		}
+		for (var i = 0; i < questionArray.length; i++) {
+			for (var m = 0; m < question4.length; m++) {
+				if (parseInt(questionArray[i][m].value) === 1 &&
+					questionArray[i][m].checked) {
+					correct++;
+				}
+			}
+		}
+		for (var i = 0; i < questionArray.length; i++) {
+			for (var n = 0; n < question5.length; n++) {
+				if (parseInt(questionArray[i][n].value) === 1 &&
+					questionArray[i][n].checked) {
+					correct++;
+				}
+			}
+		}
+		results.html(
+			"You got " + correct + " out of 5 questions correct!<br />" +
+			"You got " + (5 - correct) + " out of 5 questions incorrect!<br />"
+			);
+		
+	}
+
+</script>
 
 </body>
 </html>

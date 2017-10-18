@@ -7,9 +7,9 @@ $(window).on("load", function() {
 var correct = 0;
 var incorrect = 0;
 var unanswered = 0;
-var timeRemaining = 30;
+var timeRemaining = 40;
 var userAnswers = []; // if user didn't answer, push undefined
-var correctAnswers = ["Hola", "hola", "\"hola\"", "\"Hola\"", "Aesop", "Owl", "The Fifth Element", "Birds Nests"];
+var correctAnswers = [["Hola", "hola", "\"hola\"", "\"Hola\""], "Aesop", "Owl", "The Fifth Element", "Birds Nests"];
 var intervalId; // variable to store setInterval
 var isCounting = false; // variable to signal if timer is running
 
