@@ -8,128 +8,142 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 	
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
 
 	<div class="container">
 	
-		<div class="jumbotron text-justify">
+		<div class="jumbotron text-center">
 
-			<h1>Totally Trivial Trivia!</h1><br />
+			<h1>Totally Trivial Trivia!</h1>
 
 			<h2 class="text-primary">Time Remaining: <span id="time-remaining">30</span></h2>
-			<button id="start" class="btn btn-success">Start</button>
-			<button id="pause" class="btn btn-danger">Pause</button>
+			<!-- Timer toggle -->
+			<!-- <button id="start" class="btn btn-success">Start</button>
+			<button id="pause" class="btn btn-danger">Pause</button> -->
 			<hr />
 			
 			<!-- QUIZ START -->
+			<div id="quiz-div" class="row">
+				<div class="questions-div col-md-10 col-md-offset-2">
+					<div class="question">
+						<h4>What is the word for "Hello" in Spanish?</h4>
+					    <label class="radio-inline">
+						    <input type="radio" name="question1" value="A" />
+						    Chola
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question1" value="B" />
+						    Gracias
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question1" value="C" />
+						    Aloha
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question1" value="D" />
+						    Hola
+						</label>
+					</div>
+			    	
+					<div class="question">
+						<h4>Who wrote "Don't count your chickens before they're hatched"?</h4>
+					    <label class="radio-inline">
+						    <input type="radio" name="question2" value="A" />
+						    Aesop
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question2" value="B" />
+						    Shakespeare
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question2" value="C" />
+						    Benjamin Franklin
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question2" value="D" />
+						    Confucius
+						</label>
+					</div>
 
-		    	<h4>What is the word for "Hello" in Spanish?</h4>
-			    <div>
-				    <input type="radio" name="question1" id="question1A" value="A" />
-				    Chola
-				</div>
-				<div>
-				    <input type="radio" name="question1" id="question1B" value="B" />
-				    Gracias
-				</div>
-				<div>
-				    <input type="radio" name="question1" id="question1C" value="C" />
-				    Aloha
-				</div>
-				<div>
-				    <input type="radio" name="question1" id="question1D" value="D" />
-				    Hola
-				</div>
-		  		<br />
+					<div class="question">
+						<h4>Which kind of animal did Florence Nightingale often carry around in her pocket?</h4>
+						<label class="radio-inline">
+						    <input type="radio" name="question3" value="A" />
+						    Spider
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question3" value="B" />
+						    Snake
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question3" value="C" />
+						    Owl
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question3" value="D" />
+						    Ladybug
+						</label>
+					</div>
 
-				<h4>Who wrote "Don't count your chickens before they're hatched"?</h4>
-			    <div>
-				    <input type="radio" name="question2" id="question2A" value="A" />
-				    Aesop
-				</div>
-				<div>
-				    <input type="radio" name="question2" id="question2B" value="B" />
-				    Shakespeare
-				</div>
-				<div>
-				    <input type="radio" name="question2" id="question2C" value="C" />
-				    Benjamin Franklin
-				</div>
-				<div>
-				    <input type="radio" name="question2" id="question2D" value="D" />
-				    Confucius
-				</div>
-		  		<br />
+					<div class="question">
+						<h4>In which film do the words "I love you" save planet earth?</h4>
+					    <label class="radio-inline">
+						    <input type="radio" name="question4" value="A" />
+						    The Day After Tomorrow
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question4" value="B" />
+						    The Fifth Element
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question4" value="C" />
+						    P.S. I Love You
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question4" value="D" />
+						    Beauty &amp; The Beast
+						</label>
+					</div>
 
-				<h4>Which kind of animal did Florence Nightingale often carry around in her pocket?</h4>
-				<div>
-				    <input type="radio" name="question3" id="question3A" value="A" />
-				    Spider
-				</div>
-				<div>
-				    <input type="radio" name="question3" id="question3B" value="B" />
-				    Snake
-				</div>
-				<div>
-				    <input type="radio" name="question3" id="question3C" value="C" />
-				    Owl
-				</div>
-				<div>
-				    <input type="radio" name="question3" id="question3D" value="D" />
-				    Ladybug
-				</div>
-		  		<br />
+					<div class="question">
+						<h4>What does a nidoligist study?</h4>
+					    <label class="radio-inline">
+						    <input type="radio" name="question5" value="A" />
+						    Waves
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question5" value="B" />
+						   	Clouds
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question5" value="C" />
+						    Birds Nests
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question5" value="D" />
+						    Caves
+						</label>
+						<label class="radio-inline">
+						    <input type="radio" name="question5" value="E" />
+						    Dreams
+						</label>
+					</div>
+					<!-- QUIZ END -->
 
-				<h4>In which film do the words "I love you" save planet earth?</h4>
-			    <div>
-				    <input type="radio" name="question4" id="question4A" value="A" />
-				    The Day After Tomorrow
-				</div>
-				<div>
-				    <input type="radio" name="question4" id="question4B" value="B" />
-				    The Fifth Element
-				</div>
-				<div>
-				    <input type="radio" name="question4" id="question4C" value="C" />
-				    P.S. I Love You
-				</div>
-				<div>
-				    <input type="radio" name="question4" id="question4D" value="D" />
-				    Beauty &amp; the Beast
-				</div>
-		  		<br />
+					<!-- Submit Button -->
+					<div class="submit-button-div">
+						<input type="submit" id="done" value="Done" class="btn btn-info" onclick="submitted()">
+					</div>
 
-				<h4>What does a nidoligist study?</h4>
-			    <div>
-				    <input type="radio" name="question5" id="question5A" value="A" />
-				    Waves
-				</div>
-				<div>
-				    <input type="radio" name="question5" id="question5B" value="B" />
-				   	Clouds
-				</div>
-				<div>
-				    <input type="radio" name="question5" id="question5C" value="C" />
-				    Birds Nests
-				</div>
-				<div>
-				    <input type="radio" name="question5" id="question5D" value="D" />
-				    Caves
-				</div>
-				<div>
-				    <input type="radio" name="question5" id="question5E" value="E" />
-				    Dreams
-				</div>
-		  		<br />
-					
-				<!-- Submit Button -->
-				<input type="submit" id="done" value="Done" class="btn btn-info" onclick="submitted()">
+				</div> <!-- /.questions-div -->
+			</div> <!-- /.wrapper -->
 		    
-	
 			<!-- Results Display -->
 			<div id="results"></div>
-
+			
 		</div>
 
 
@@ -139,125 +153,8 @@
 <!-- jQuery CDN -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- <script src="./assets/javascript/app.js"></script> -->
-
-<script type="text/javascript">
-// VARIABLES
-// ========================================================================================
-	// user stats
-	var correct = 0;
-	var incorrect = 0;
-	var unanswered = 0;
-
-	// quiz stats
-	var userAnswers = ["", "", "", "", ""];
-	var quizAnswers = [ "D", "A", "C", "B", "C"];
-	var hasSubmitted = false;
-
-	// timer
-	var timeRemaining = 30;
-	var intervalId; // variable to store setInterval
-	var isCounting = false; // variable to signal if timer is running
-
-
-// FUNCTIONS
-// ========================================================================================
-	function submitted() {
-		correct = 0;
-		incorrect = 0;
-		unanswered = 0;
-		hasSubmitted = true;
-		console.log(userAnswers);
-		for (var i = 0; i < userAnswers.length; i++) {
-			if (userAnswers[i] === "") {
-				unanswered++;
-			}
-			else if (userAnswers[i] === quizAnswers[i]) {
-				correct++;
-			}
-			else {
-				incorrect++;
-			}
-		}
-		$("#results").html(
-			"You have " + unanswered + " unanswered question(s).<br />" +
-			"You got " + correct + " out of 5 questions correct!<br />" +
-			"You got " + incorrect + " out of 5 questions incorrect!"
-		);
-		console.log("User has submitted answers: " + hasSubmitted);
-	}
-
-	function count() {
-		timeRemaining--;
-		$("#time-remaining").html(timeRemaining);
-	}
-
-
-// MAIN PROCESS
-// ========================================================================================
-$(window).on("load", function() {
-
-	// Test
-	$("#start").on("click", function() {
-		intervalId = setInterval(count, 1000);
-		isCounting = true;
-	});
-	$("#pause").on("click", function() {
-		clearInterval(intervalId);
-		isCounting = false;
-	})
-
-	if (hasSubmitted && isCounting) {
-		clearInterval(intervalId);
-		isCounting = false;
-	} else {
-		clearInterval(intervalId);
-		isCounting = false;
-	}
-
-	// if (timeRemaining > 0) {
-	// 	if (hasSubmitted) {
-	// 		clearInterval(intervalId);
-	// 		isCounting = false;
-	// 	}
-	// 	else {
-	// 		return;
-	// 	}
-	// }
-	// else if (timeRemaining === 0 && !hasSubmitted) {
-	// 	clearInterval(intervalId);
-	// 	isCounting = false;
-	// 	alert("Time's up!");
-	// }
-
-	$(document).on("change", "input[name='question1']", function() {
-	// making var question1 = "input[name='question1']";
-	// and typing .on("change", question1, function() {}) here doesn't work because
-	// this $(document).on("change") function is asynchronous
-	// so it runs even before var question1 has been defined, making question1 show up as undefined
-		userAnswers[0] = this.value;
-		console.log("Question 1: " + userAnswers[0]);
-	});
-	$(document).on("change", "input[name='question2']", function() {
-		userAnswers[1] = this.value;
-		console.log("Question 2: " + userAnswers[1]);
-	});
-	$(document).on("change", "input[name='question3']", function() {
-		userAnswers[2] = this.value;
-		console.log("Question 3: " + userAnswers[2]);
-	});
-	$(document).on("change", "input[name='question4']", function() {
-		userAnswers[3] = this.value;
-		console.log("Question 4: " + userAnswers[3]);
-	});
-	$(document).on("change", "input[name='question5']", function() {
-		userAnswers[4] = this.value;
-		console.log("Question 5: " + userAnswers[4]);
-	});
-
-});
-	
-</script>
+<!-- JavaScript Link -->
+<script src="./assets/javascript/app.js"></script>
 
 </body>
 </html>

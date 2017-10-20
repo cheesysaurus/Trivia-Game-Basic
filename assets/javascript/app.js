@@ -1,105 +1,159 @@
-// when page and content have finished loading
-$(window).on("load", function() {
+// Notes:
+// 1) Get all of the code to work first, and then worry about optimizing
+// 2) Use console.log & chrome inspector to debug and give you more information! It really does help
+// 3) Not all stack overflow answers are necessarily correct. Test it out for yourself 
+// // maybe on jsfiddle or jsbin before using
 
 
 // GLOBAL VARIABLES
-// =====================================================================================
-var correct = 0;
-var incorrect = 0;
-var unanswered = 0;
-var timeRemaining = 40;
-var userAnswers = []; // if user didn't answer, push undefined
-var correctAnswers = [["Hola", "hola", "\"hola\"", "\"Hola\""], "Aesop", "Owl", "The Fifth Element", "Birds Nests"];
-var intervalId; // variable to store setInterval
-var isCounting = false; // variable to signal if timer is running
+// ========================================================================================
+	// user stats
+	var correct = 0;
+	var incorrect = 0;
+	var unanswered = 0;
+
+	// quiz stats
+	var userAnswers = ["", "", "", "", ""];
+	var quizAnswers = [ "D", "A", "C", "B", "C"];
+	var hasSubmitted = false;
+
+	// timer
+	var timeRemaining = 30;
+	var intervalId; // variable to store setInterval
+	var isCounting = false; // variable to signal if timer is running
 
 
 // FUNCTIONS
-// =====================================================================================
-// function to reset game
-function initGame() {
+// ========================================================================================
+	function count() {
+		// decrement timeRemaining by 1
+		timeRemaining--;
 
-	// reset form to blank
+		// display timeRemaining on HTML
+		$("#time-remaining").html(timeRemaining);
 
-	// reset timer (clearInterval)
-	clearInterval(intervalId);
+		// if time runs out before user finishes/submits answers
+		if (timeRemaining === 0 && !hasSubmitted) {
+			// stop timer
+			stopTimer();
 
-	// start timer (setInterval)
-	if (!isCounting) {
+			// alert loss
+			alert("Time's up!");
+
+			// compare user answers with correct answers 
+			compareAnswers();
+
+			// display the results of the quiz
+			displayResults();
+		}
+	}
+
+	function startTimer() {
 		intervalId = setInterval(count, 1000);
 		isCounting = true;
 	}
 
-	// reset correct/incorrect/unanswered
+	function stopTimer() {
+		clearInterval(intervalId);
+		isCounting = false;
+	}
 
-	// reset array of user's answers
-	userAnswers = [];
+	// compare user's answers with the correct answers
+	function compareAnswers() {
+		// loop through userAnswers array & compare answer at each index to quizAnswers array
+		for (var i = 0; i < userAnswers.length; i++) {
+			if (userAnswers[i] === "") {
+				unanswered++;
+			}
+			else if (userAnswers[i] === quizAnswers[i]) {
+				correct++;
+			}
+			else {
+				incorrect++;
+			}
+		}
+	}
 
-	// update html
+	function displayResults() {
+		$("#quiz-div").css("display", "none");
+		$("#results").html(
+			"You have " + unanswered + " unanswered question(s).<br />" +
+			"You got " + correct + " out of 5 questions correct!<br />" +
+			"You got " + incorrect + " out of 5 questions incorrect!"
+		);
+	}
 
-}
+	// when user clicks on the done button
+	function submitted() {
+		// reset these variables on each click so that it doesn't keep aggregating if
+		// the user keeps clicking the button multiple times
+		correct = 0;
+		incorrect = 0;
+		unanswered = 0;
 
-// function to count down by one second
-function count() {
-	timeRemaining--;
-	$("#time-remaining").html(timeRemaining);
-}
+		// testing
+		hasSubmitted = true;
+		console.log(userAnswers);
+		console.log(quizAnswers);
+		console.log("User has submitted answers: " + hasSubmitted);
 
-// function to push user's answers to array
-$("#done").on("click", function() {
-	clearInterval(intervalId);
-	var userInput = $("input");
-	userAnswers.push(userInput.value);
-	alert(userAnswers);
-});
+		// stop timer
+		stopTimer();
+
+		// compare answers
+		compareAnswers();
+		
+		// display results
+		displayResults();
+
+	}
 
 
 // MAIN PROCESS
-// =====================================================================================
-// initialize game
-initGame();
+// ========================================================================================
+$(window).on("load", function() {
 
-// if time runs out before user clicks on submit
-if (timeRemaining === 0) {
+	// Timer toggle
+	// $("#start").on("click", function() {
+	// 	intervalId = setInterval(count, 1000);
+	// 	isCounting = true;
+	// });
+	// $("#pause").on("click", function() {
+	// 	clearInterval(intervalId);
+	// 	isCounting = false;
+	// });
 
-	clearInterval(intervalId);
+	// start countdown immediately upon page load
+	startTimer();
 
-	// show the number of questions player answered correctly and incorrectly
-
-	// reset button
-}
-// else
-else {
-
-	// loop through both arrays and compare value at each index
-
-		// if answer matches
-
-			// increase correct answers
-
-		// else if answer doesn't match
-
-			// increase incorrect answers
-
-		// else
-
-			// increase unanswered
-
-	// reset button
-
-}
-
-// Testing & Debugging
-$("#pause").on("click", function() {
-	clearInterval(intervalId);
-	isCounting = false;
-});
-
-$("#start").on("click", function() {
-	intervalId = setInterval(count, 1000);
-	isCounting = true;
-});
-
-console.log(userAnswers);
+	// whenever the user makes any change to the radio buttons for question 1
+	$(document).on("change", "input[name='question1']", function() {
+	/* 
+	making var question1 = "input[name='question1']";
+	and typing $(document).on("change", question1, function() {}); here doesn't work because
+	the document onchange function is asynchronous
+	so it runs even before var question1 has been defined, making question1 show up as undefined
+	*/
+		// change the empty string at the appropriate userAnswers index to the value of
+		// whichever radio button the user selected
+		userAnswers[0] = this.value;
+		console.log("Question 1: " + userAnswers[0]);
+	});
+	$(document).on("change", "input[name='question2']", function() {
+		userAnswers[1] = this.value;
+		console.log("Question 2: " + userAnswers[1]);
+	});
+	$(document).on("change", "input[name='question3']", function() {
+		userAnswers[2] = this.value;
+		console.log("Question 3: " + userAnswers[2]);
+	});
+	$(document).on("change", "input[name='question4']", function() {
+		userAnswers[3] = this.value;
+		console.log("Question 4: " + userAnswers[3]);
+	});
+	$(document).on("change", "input[name='question5']", function() {
+		userAnswers[4] = this.value;
+		console.log("Question 5: " + userAnswers[4]);
+	});
 
 });
