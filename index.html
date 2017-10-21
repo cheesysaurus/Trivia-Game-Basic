@@ -18,131 +18,140 @@
 		<div class="jumbotron text-center">
 
 			<h1>Totally Trivial Trivia!</h1>
+			
+			<div id="timer">
+				<!-- Timer toggle -->
+				<button id="start" class="btn btn-success">Start</button>
+				<!-- <button id="pause" class="btn btn-danger">Pause</button> -->
 
-			<h2 class="text-primary">Time Remaining: <span id="time-remaining">30</span></h2>
-			<!-- Timer toggle -->
-			<!-- <button id="start" class="btn btn-success">Start</button>
-			<button id="pause" class="btn btn-danger">Pause</button> -->
-			<hr />
+				<h2 class="text-primary">Time Remaining: <span id="time-remaining">30</span></h2>
+			</div>
+
+			<hr id="divider" />
 			
 			<!-- QUIZ START -->
 			<div id="quiz-div" class="row">
-				<div class="questions-div col-md-10 col-md-offset-2">
-					<div class="question">
-						<h4>What is the word for "Hello" in Spanish?</h4>
-					    <label class="radio-inline">
-						    <input type="radio" name="question1" value="A" />
-						    Chola
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question1" value="B" />
-						    Gracias
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question1" value="C" />
-						    Aloha
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question1" value="D" />
-						    Hola
-						</label>
-					</div>
-			    	
-					<div class="question">
-						<h4>Who wrote "Don't count your chickens before they're hatched"?</h4>
-					    <label class="radio-inline">
-						    <input type="radio" name="question2" value="A" />
-						    Aesop
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question2" value="B" />
-						    Shakespeare
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question2" value="C" />
-						    Benjamin Franklin
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question2" value="D" />
-						    Confucius
-						</label>
-					</div>
+				<div id="questions-div" class="col-md-10 col-md-offset-2">
+					<form id="quiz-form">
+						<div class="question">
+							<h4>What is the word for "Hello" in Spanish?</h4>
+						    <label class="radio-inline">
+							    <input type="radio" name="question1" value="A" />
+							    Chola
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question1" value="B" />
+							    Gracias
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question1" value="C" />
+							    Aloha
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question1" value="D" />
+							    Hola
+							</label>
+						</div>
+				    	
+						<div class="question">
+							<h4>Who wrote "Don't count your chickens before they're hatched"?</h4>
+						    <label class="radio-inline">
+							    <input type="radio" name="question2" value="A" />
+							    Aesop
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question2" value="B" />
+							    Shakespeare
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question2" value="C" />
+							    Benjamin Franklin
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question2" value="D" />
+							    Confucius
+							</label>
+						</div>
 
-					<div class="question">
-						<h4>Which kind of animal did Florence Nightingale often carry around in her pocket?</h4>
-						<label class="radio-inline">
-						    <input type="radio" name="question3" value="A" />
-						    Spider
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question3" value="B" />
-						    Snake
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question3" value="C" />
-						    Owl
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question3" value="D" />
-						    Ladybug
-						</label>
-					</div>
+						<div class="question">
+							<h4>Which kind of animal did Florence Nightingale often carry around in her pocket?</h4>
+							<label class="radio-inline">
+							    <input type="radio" name="question3" value="A" />
+							    Spider
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question3" value="B" />
+							    Snake
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question3" value="C" />
+							    Owl
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question3" value="D" />
+							    Ladybug
+							</label>
+						</div>
 
-					<div class="question">
-						<h4>In which film do the words "I love you" save planet earth?</h4>
-					    <label class="radio-inline">
-						    <input type="radio" name="question4" value="A" />
-						    The Day After Tomorrow
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question4" value="B" />
-						    The Fifth Element
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question4" value="C" />
-						    P.S. I Love You
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question4" value="D" />
-						    Beauty &amp; The Beast
-						</label>
-					</div>
+						<div class="question">
+							<h4>In which film do the words "I love you" save planet earth?</h4>
+						    <label class="radio-inline">
+							    <input type="radio" name="question4" value="A" />
+							    The Day After Tomorrow
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question4" value="B" />
+							    The Fifth Element
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question4" value="C" />
+							    P.S. I Love You
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question4" value="D" />
+							    Beauty &amp; The Beast
+							</label>
+						</div>
 
-					<div class="question">
-						<h4>What does a nidoligist study?</h4>
-					    <label class="radio-inline">
-						    <input type="radio" name="question5" value="A" />
-						    Waves
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question5" value="B" />
-						   	Clouds
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question5" value="C" />
-						    Birds Nests
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question5" value="D" />
-						    Caves
-						</label>
-						<label class="radio-inline">
-						    <input type="radio" name="question5" value="E" />
-						    Dreams
-						</label>
-					</div>
-					<!-- QUIZ END -->
+						<div class="question">
+							<h4>What does a nidoligist study?</h4>
+						    <label class="radio-inline">
+							    <input type="radio" name="question5" value="A" />
+							    Waves
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question5" value="B" />
+							   	Clouds
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question5" value="C" />
+							    Birds nests
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question5" value="D" />
+							    Caves
+							</label>
+							<label class="radio-inline">
+							    <input type="radio" name="question5" value="E" />
+							    Dreams
+							</label>
+						</div>
+						<!-- QUIZ END -->
 
-					<!-- Submit Button -->
-					<div class="submit-button-div">
-						<input type="submit" id="done" value="Done" class="btn btn-info" onclick="submitted()">
-					</div>
+						<!-- Submit Button -->
+						<div class="submit-button-div">
+							<input type="submit" id="done" value="Done" class="btn btn-info" onclick="submitted()">
+						</div>
+					</form>
 
 				</div> <!-- /.questions-div -->
-			</div> <!-- /.wrapper -->
+			</div> <!-- /.quiz-div -->
 		    
 			<!-- Results Display -->
-			<div id="results"></div>
+			<div id="results-div">
+				<div id="results"></div>
+				<button id="reset" class="btn btn-primary">Reset</button>
+			</div>
 			
 		</div>
 

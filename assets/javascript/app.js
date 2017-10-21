@@ -76,6 +76,7 @@
 
 	function displayResults() {
 		$("#quiz-div").css("display", "none");
+		$("#results-div").css("display", "unset");
 		$("#results").html(
 			"You have " + unanswered + " unanswered question(s).<br />" +
 			"You got " + correct + " out of 5 questions correct!<br />" +
@@ -85,6 +86,10 @@
 
 	// when user clicks on the done button
 	function submitted() {
+
+		// prevent form from automatically refreshing upon submit
+		event.preventDefault();
+
 		// reset these variables on each click so that it doesn't keep aggregating if
 		// the user keeps clicking the button multiple times
 		correct = 0;
@@ -113,18 +118,32 @@
 // ========================================================================================
 $(window).on("load", function() {
 
-	// Timer toggle
-	// $("#start").on("click", function() {
-	// 	intervalId = setInterval(count, 1000);
-	// 	isCounting = true;
-	// });
+	// alert user to start timer/quiz
+	alert("Welcome to Trivia Night!\nYou will be given 30 seconds to complete the quiz.\nWhen you're ready to play, press the start button.");
+
+	// timer toggle
+	$("#start").on("click", function() {
+		$("#divider").css("visibility", "visible");
+		$("#quiz-div").css("display", "unset");
+		intervalId = setInterval(count, 1000);
+		isCounting = true;
+	});
 	// $("#pause").on("click", function() {
 	// 	clearInterval(intervalId);
 	// 	isCounting = false;
 	// });
 
-	// start countdown immediately upon page load
-	startTimer();
+	// reset button
+	$("#reset").on("click", function() {
+		$("#divider").css("visibility", "hidden");
+		$("#quiz-form")[0].reset();
+		$("#results-div").css("display", "none");
+		$("#time-remaining").html("30");
+		timeRemaining = 30;
+	});
+
+	// // start countdown immediately upon page load
+	// startTimer();
 
 	// whenever the user makes any change to the radio buttons for question 1
 	$(document).on("change", "input[name='question1']", function() {

@@ -2,6 +2,23 @@
 	margin: 40px;
 	padding-bottom: 60px;
 }
+#timer {
+	display: flex;
+	justify-content: center;
+}
+#start, #pause {
+	margin-right: 15px;
+	height: 40px;
+	position: relative;
+	top: 15px;
+}
+#divider {
+	visibility: hidden;
+	margin-bottom: 5px;
+}
+#quiz-div {
+	display: none;
+}
 .question {
 	padding-bottom: 10px;
 	text-align: left;
@@ -11,6 +28,9 @@
 	position: absolute;
 	left: 10px;
 	bottom: -40px;
+}
+#results-div {
+	display: none;
 }
 #results {
 	text-align: center;
