@@ -7,143 +7,183 @@
 
 // GLOBAL VARIABLES
 // ========================================================================================
-	// user stats
-	var correct = 0;
-	var incorrect = 0;
-	var unanswered = 0;
+// user stats
+var correct = 0;
+var incorrect = 0;
+var unanswered = 0;
 
-	// quiz stats
-	var userAnswers = ["", "", "", "", ""];
-	var quizAnswers = [ "D", "A", "C", "B", "C"];
-	var hasSubmitted = false;
+// quiz stats
+var userAnswers = ["", "", "", "", ""];
+var quizAnswers = [ "D", "A", "C", "B", "C"];
+var hasSubmitted = false;
 
-	// timer
-	var timeRemaining = 30;
-	var intervalId; // variable to store setInterval
-	var isCounting = false; // variable to signal if timer is running
+// timer
+var timeRemaining = 30;
+var intervalId; // variable to store setInterval
+var isCounting = false; // variable to signal if timer is running
 
 
 // FUNCTIONS
 // ========================================================================================
-	function count() {
-		// decrement timeRemaining by 1
-		timeRemaining--;
+// this function runs whenever the timer is started (whenever startTimer() executes)
+function count() {
 
-		// display timeRemaining on HTML
-		$("#time-remaining").html(timeRemaining);
+	// decrement timeRemaining by 1
+	timeRemaining--;
 
-		// if time runs out before user finishes/submits answers
-		if (timeRemaining === 0 && !hasSubmitted) {
-			// stop timer
-			stopTimer();
+	// display timeRemaining on HTML
+	$("#time-remaining").html(timeRemaining);
 
-			// alert loss
-			alert("Time's up!");
-
-			// compare user answers with correct answers 
-			compareAnswers();
-
-			// display the results of the quiz
-			displayResults();
-		}
-	}
-
-	function startTimer() {
-		intervalId = setInterval(count, 1000);
-		isCounting = true;
-	}
-
-	function stopTimer() {
-		clearInterval(intervalId);
-		isCounting = false;
-	}
-
-	// compare user's answers with the correct answers
-	function compareAnswers() {
-		// loop through userAnswers array & compare answer at each index to quizAnswers array
-		for (var i = 0; i < userAnswers.length; i++) {
-			if (userAnswers[i] === "") {
-				unanswered++;
-			}
-			else if (userAnswers[i] === quizAnswers[i]) {
-				correct++;
-			}
-			else {
-				incorrect++;
-			}
-		}
-	}
-
-	function displayResults() {
-		$("#quiz-div").css("display", "none");
-		$("#results-div").css("display", "unset");
-		$("#results").html(
-			"You have " + unanswered + " unanswered question(s).<br />" +
-			"You got " + correct + " out of 5 questions correct!<br />" +
-			"You got " + incorrect + " out of 5 questions incorrect!"
-		);
-	}
-
-	// when user clicks on the done button
-	function submitted() {
-
-		// prevent form from automatically refreshing upon submit
-		event.preventDefault();
-
-		// reset these variables on each click so that it doesn't keep aggregating if
-		// the user keeps clicking the button multiple times
-		correct = 0;
-		incorrect = 0;
-		unanswered = 0;
-
-		// testing
-		hasSubmitted = true;
-		console.log(userAnswers);
-		console.log(quizAnswers);
-		console.log("User has submitted answers: " + hasSubmitted);
-
+	// if time runs out before user finishes/submits answers
+	if (timeRemaining === 0 && !hasSubmitted) {
 		// stop timer
 		stopTimer();
 
-		// compare answers
-		compareAnswers();
-		
-		// display results
-		displayResults();
+		// alert loss
+		alert("Time's up!");
 
+		// compare user answers with correct answers 
+		compareAnswers();
+
+		// display the results of the quiz
+		displayResults();
 	}
+
+}
+
+function startTimer() {
+	intervalId = setInterval(count, 1000);
+	isCounting = true;
+}
+
+function stopTimer() {
+	clearInterval(intervalId);
+	isCounting = false;
+}
+
+// compare user's answers with the correct answers
+function compareAnswers() {
+
+	// loop through userAnswers array & compare answer at each index to quizAnswers array
+	for (var i = 0; i < userAnswers.length; i++) {
+		if (userAnswers[i] === "") {
+			unanswered++;
+		}
+		else if (userAnswers[i] === quizAnswers[i]) {
+			correct++;
+		}
+		else {
+			incorrect++;
+		}
+	}
+
+}
+
+// enact results page
+function displayResults() {
+
+	// hide quiz page
+	$("#quiz-div").css("display", "none");
+
+	// update results
+	$("#results").html(
+		"You have " + unanswered + " unanswered question(s).<br />" +
+		"You got " + correct + " out of 5 questions correct!<br />" +
+		"You got " + incorrect + " out of 5 questions incorrect!"
+	);
+
+	// display results page
+	$("#results-div").css("display", "unset");
+
+}
+
+// when user clicks on the done button, this function will execute
+function submitted() {
+
+	// prevent form from automatically refreshing upon submit
+	event.preventDefault();
+
+	// reset these variables on each click so they don't keep aggregating if
+	// the user decides to click the button multiple times
+	correct = 0;
+	incorrect = 0;
+	unanswered = 0;
+
+	// stop timer
+	stopTimer();
+
+	// compare answers & update stats
+	compareAnswers();
+	
+	// display results page
+	displayResults();
+
+	// console insight
+	hasSubmitted = true;
+	console.log(userAnswers);
+	console.log(quizAnswers);
+	console.log("User has submitted answers: " + hasSubmitted);
+
+}
+
+// initialize/show quiz each time user starts game
+function initGame() {
+
+	// hide welcome page
+	$("#welcome-div").css("display", "none");
+	$("#start").css("display", "none");
+
+	// display quiz page
+	$("#timer").css("display", "unset");
+	$("#divider").css("visibility", "visible");
+	$("#quiz-div").css("display", "unset");
+
+}
+
+// reset the form & reenact landing page
+function resetGame() {
+
+	// reset form
+	$("#quiz-form")[0].reset();
+	// reset user's answers
+	userAnswers = ["", "", "", "", ""];
+
+	// hide results page
+	$("#results-div").css("display", "none");
+	$("#divider").css("visibility", "hidden");
+	$("#timer").css("display", "none");
+
+	// reset timer display to initial time
+	$("#time-remaining").html("30");
+	// reset timer to initial time
+	timeRemaining = 30;
+
+	// display welcome page
+	$("#welcome-div").css("display", "unset");
+	$("#start").css("display", "unset");
+
+}
 
 
 // MAIN PROCESS
 // ========================================================================================
 $(window).on("load", function() {
 
-	// alert user to start timer/quiz
-	alert("Welcome to Trivia Night!\nYou will be given 30 seconds to complete the quiz.\nWhen you're ready to play, press the start button.");
-
-	// timer toggle
+	// when user clicks start, initialize game display & start countdown!
 	$("#start").on("click", function() {
-		$("#divider").css("visibility", "visible");
-		$("#quiz-div").css("display", "unset");
-		intervalId = setInterval(count, 1000);
-		isCounting = true;
+		startTimer();
+		initGame();
 	});
+	// // timer toggle
 	// $("#pause").on("click", function() {
 	// 	clearInterval(intervalId);
 	// 	isCounting = false;
 	// });
 
-	// reset button
+	// reset game when user clicks reset
 	$("#reset").on("click", function() {
-		$("#divider").css("visibility", "hidden");
-		$("#quiz-form")[0].reset();
-		$("#results-div").css("display", "none");
-		$("#time-remaining").html("30");
-		timeRemaining = 30;
+		resetGame();
 	});
-
-	// // start countdown immediately upon page load
-	// startTimer();
 
 	// whenever the user makes any change to the radio buttons for question 1
 	$(document).on("change", "input[name='question1']", function() {
