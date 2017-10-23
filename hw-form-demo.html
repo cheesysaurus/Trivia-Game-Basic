@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+		
+	<title></title>
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	
+	<style>
+		body {
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<form class="form-control">
+			<label>Some Question</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q1" value="A" />Choice A
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q1" value="B" />Choice B
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q1" value="C" />Choice C
+				</label>
+			</div>
+
+			<label>Some Question</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q2" value="A" />Choice A
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q2" value="B" />Choice B
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q2" value="C" />Choice C
+				</label>
+			</div>
+
+			<label>Some Question</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q3" value="A" />Choice A
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q3" value="B" />Choice B
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="q3" value="C" />Choice C
+				</label>
+			</div>
+			<!-- form-control makes the form beautifulllll -->
+
+			<input type="submit" id="submit" class="btn btn-info" />
+		</form>
+	
+	</div>
+
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+// form tag in old school times was used for something very different
+// so it has a lot of default events linked to it
+// that's why we use event.preventDefault(); when working with forms (to prevent automatic refreshing of page upon clicking submit)
+
+// 2 parts to input groups
+// 1) label
+// 2) input
+// all inputs should have a type
+
+// radio buttons are one of the weird inputs of forms
+
+$(document).ready(function() {
+
+	var userAnswers = [];
+	var quizAnswers = ["B", "A", "C"];
+
+	$("#submit").on("click", function(e) {
+
+		e.preventDefault();
+
+		var numQuestions = 3;
+		for (var i = 0; i < numQuestions; i++) {
+
+			var selected = $('input[name=q' + (i + 1) + ']:checked').val();
+			userAnswers.push(selected);
+
+			if (userAnswers[i] === undefined) {
+				console.log("You didn't answer Question " + (i + 1) + "!");
+			}
+			else if (userAnswers[i] === quizAnswers[i]) {
+				console.log("Question " + (i + 1) + ": correct");
+			}
+			else if (userAnswers[i] !== quizAnswers[i]) {
+				console.log("Question " + (i + 1) + ": incorrect");
+			}
+			
+
+		}
+
+		console.log(userAnswers);
+		console.log(quizAnswers);
+
+	});
+
+});
+
+</script>
+
+
+
+</body>
+</html>
+

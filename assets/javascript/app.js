@@ -120,15 +120,17 @@ function submitted() {
 
 	// console insight
 	hasSubmitted = true;
+	console.log("================================");
 	console.log(userAnswers);
 	console.log(quizAnswers);
+	console.log("Timer is running: " + isCounting);
 	console.log("User has submitted answers: " + hasSubmitted);
 
 }
 
 // initialize/show quiz each time user starts game
 function initGame() {
-
+	
 	// hide welcome page
 	$("#welcome-div").css("display", "none");
 	$("#start").css("display", "none");
@@ -137,6 +139,13 @@ function initGame() {
 	$("#timer").css("display", "unset");
 	$("#divider").css("visibility", "visible");
 	$("#quiz-div").css("display", "unset");
+	$(".jumbotron").css("padding-bottom", "70px");
+
+	// console insight
+	console.log("================================");
+	console.log("Timer is running: " + isCounting);
+	console.log("User has submitted answers: " + hasSubmitted);
+	console.log("================================");
 
 }
 
@@ -174,7 +183,7 @@ $(window).on("load", function() {
 		startTimer();
 		initGame();
 	});
-	// // timer toggle
+	// // timer toggle (pause button is commented out on HTML)
 	// $("#pause").on("click", function() {
 	// 	clearInterval(intervalId);
 	// 	isCounting = false;
@@ -192,6 +201,7 @@ $(window).on("load", function() {
 	and typing $(document).on("change", question1, function() {}); here doesn't work because
 	the document onchange function is asynchronous
 	so it runs even before var question1 has been defined, making question1 show up as undefined
+	EDIT: actually it does work if i define the variable within the window.onload function
 	*/
 		// change the empty string at the appropriate userAnswers index to the value of
 		// whichever radio button the user selected

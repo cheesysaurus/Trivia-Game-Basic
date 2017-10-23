@@ -1,6 +1,15 @@
+/* GENERAL */
+#bootstrap-override {
+	font-family: 'Montserrat', sans-serif;
+	/* background-image: url("../images/background/1.jpg"); */
+	background-size: cover;
+}
+
 .jumbotron {
-	margin: 40px;
-	padding-bottom: 60px;
+	width: 75%;
+	margin: 60px auto;
+	padding: 30px;
+	/* background: rgb(19, 255, 224); */
 }
 
 /* WELCOME PAGE */
@@ -12,16 +21,9 @@
 }
 
 /* QUIZ PAGE */
-#timer {
-	display: flex;
-	justify-content: center;
-}
-
 #start, #pause {
-	margin-right: 15px;
-	height: 40px;
-	position: relative;
-	top: 15px;
+	width: 70px;
+	margin: 15px auto;
 }
 
 #divider {
@@ -38,7 +40,7 @@
 }
 
 .question {
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	text-align: left;
 	position: relative;
 }
