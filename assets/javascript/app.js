@@ -40,6 +40,12 @@ function count() {
 
 	// if time runs out before user finishes/submits answers
 	if (timeRemaining === 0 && !hasSubmitted) {
+
+		// reset these variables on each click so they don't keep aggregating each time the time runs out
+		correct = 0;
+		incorrect = 0;
+		unanswered = 0;
+
 		// stop timer
 		stopTimer();
 
