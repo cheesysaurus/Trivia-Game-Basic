@@ -21,7 +21,7 @@ var quizAnswers = [ "D", "A", "C", "B", "C"];
 var hasSubmitted = false;
 
 // timer
-var timeRemaining = 5;
+var timeRemaining = 30;
 var intervalId; // variable to store setInterval
 var isCounting = false; // variable to signal if timer is running
 var countdownAudio = $("#countdown-audio")[0];
@@ -191,7 +191,7 @@ function resetGame() {
 	// reset timer display to initial time
 	$("#time-remaining").html("30");
 	// reset timer to initial time
-	timeRemaining = 5;
+	timeRemaining = 30;
 
 	// display welcome page
 	$("#welcome-div").css("display", "unset");
