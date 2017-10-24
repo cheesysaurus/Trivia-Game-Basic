@@ -6,7 +6,7 @@
 	<title>Trivia Game (Basic)</title>
 
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Fascinate+Inline|Fjalla+One|Varela+Round" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Fascinate+Inline|Fjalla+One|Varela+Round|Permanent+Marker|Shrikhand|Zilla+Slab+Highlight:400,700|Lemon|Fontdiner+Swanky" rel="stylesheet">
 
 	<!-- Font Awesome -->
 	<script src="https://use.fontawesome.com/66533346b7.js"></script>
@@ -23,12 +23,12 @@
 	
 		<div class="jumbotron text-center">
 
-			<h1>Totally Trivial Trivia!</h1>
+			<h1>Great Groovin' Graffiti!</h1>
 	
 			<div id="welcome-div">
 				<div id="welcome">
 					Welcome to Trivia Night!<br />
-					You will be given 30 seconds to complete the quiz.<br />
+					You will be given 30 seconds to reveal<br />your knowledge about all things graffiti.<br />
 					Press start when you're ready to play!
 				</div>
 				<button id="start" class="btn btn-success">Start</button>
@@ -49,106 +49,102 @@
 				<div id="questions-div" class="col-md-10 col-md-offset-2">
 					<form id="quiz-form">
 						<div class="question">
-							<h4>What is the word for "Hello" in Spanish?</h4>
+							<h4>Which ancient civilization has evidences of graffiti?</h4>
 						    <label class="radio-inline">
 							    <input type="radio" name="question1" value="A" />
-							    Chola
+							    Egypt
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question1" value="B" />
-							    Gracias
+							    Japan
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question1" value="C" />
-							    Aloha
+							    The Aztec
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question1" value="D" />
-							    Hola
+							    Greece
 							</label>
 						</div>
 				    	
 						<div class="question">
-							<h4>Who wrote "Don't count your chickens before they're hatched"?</h4>
+							<h4>What was the nickname of the mysterious graffiti artist who attained fame in New York?</h4>
 						    <label class="radio-inline">
 							    <input type="radio" name="question2" value="A" />
-							    Aesop
+							    Taki
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question2" value="B" />
-							    Shakespeare
+							    Loki
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question2" value="C" />
-							    Benjamin Franklin
+							    Hoki
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question2" value="D" />
-							    Confucius
+							    Poki
 							</label>
 						</div>
 
 						<div class="question">
-							<h4>Which kind of animal did Florence Nightingale often carry around in her pocket?</h4>
+							<h4>Which organization started strong anti-graffiti campaigns in the 1980s?</h4>
 							<label class="radio-inline">
 							    <input type="radio" name="question3" value="A" />
-							    Spider
+							    The US Postal & Telegraph System
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question3" value="B" />
-							    Snake
+							    The US Road & Public Property Maintenance Authority
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question3" value="C" />
-							    Owl
+							    The Metro Transit Authority
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question3" value="D" />
-							    Ladybug
+							    The Street Angels Association
 							</label>
 						</div>
 
 						<div class="question">
-							<h4>In which film do the words "I love you" save planet earth?</h4>
+							<h4>During the Die Hard era of graffiti art, what did the artists use for their expression?</h4>
 						    <label class="radio-inline">
 							    <input type="radio" name="question4" value="A" />
-							    The Day After Tomorrow
+							    Subways
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question4" value="B" />
-							    The Fifth Element
+							    Cars meant for the scrap yard
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question4" value="C" />
-							    P.S. I Love You
+							    Government buildings
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question4" value="D" />
-							    Beauty &amp; The Beast
+							    Deserted roads
 							</label>
 						</div>
 
 						<div class="question">
-							<h4>What does a nidoligist study?</h4>
+							<h4>On which of the following walls was graffiti painted from end to end?</h4>
 						    <label class="radio-inline">
 							    <input type="radio" name="question5" value="A" />
-							    Waves
+							    Great Wall of China
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question5" value="B" />
-							   	Clouds
+							   	Wailing Wall
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question5" value="C" />
-							    Birds nests
+							    Berlin Wall
 							</label>
 							<label class="radio-inline">
 							    <input type="radio" name="question5" value="D" />
-							    Caves
-							</label>
-							<label class="radio-inline">
-							    <input type="radio" name="question5" value="E" />
-							    Dreams
+							    Wall Street
 							</label>
 						</div>
 						<!-- QUIZ END -->
@@ -172,10 +168,14 @@
 			<audio id="countdown-audio" preload="auto">
 				<source src="./assets/audio/jeopardy-countdown.m4a" type="audio/mpeg" />
 			</audio>
+		
+		</div> <!-- /.jumbotron -->
 
-		</div>
+	</div> <!-- /.container -->
 
-
+	<!-- Credit -->
+	<div id="credits-div">
+		<p>Image Credit: <a href="https://thezork.deviantart.com/art/melted-boi-graffiti-character-269041933" target="_blank">thezork</a> | Quiz Credit: <a href="http://www.quizmoz.com/quizzes/Arts-and-Culture-Quizzes/g/Graffiti-Quiz.asp" target="_blank">quizmoz</a></p>
 	</div>
 
 

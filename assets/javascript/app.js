@@ -6,6 +6,7 @@
 
 // Residual questions/issues:
 // 1) How to make capturing the value of each input into a function (lines 202-230)
+// 2) How to position the credits so that it stays at the bottom of the quiz div without overlapping
 
 
 // GLOBAL VARIABLES

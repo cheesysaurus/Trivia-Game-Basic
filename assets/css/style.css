@@ -1,8 +1,9 @@
 /* GENERAL */
 #bootstrap-override {
 	font-family: 'Varela Round', 'Montserrat', sans-serif;
-	background-image: url("../images/background/7.jpg");
+	background-image: url("../images/background/12.jpg");
 	background-size: cover;
+	color: white;
 }
 
 .jumbotron {
@@ -10,11 +11,28 @@
 	margin: 60px auto;
 	padding: 40px;
 	padding-bottom: 60px;
-	/* border: 6px solid grey; */
+	background: rgba(0, 0, 0, 0.8);
 }
 
 h1 {
-	font-family: 'Fascinate Inline', sans-serif;
+	font-family: 'Permanent Marker', 'Fascinate Inline', sans-serif;
+	font-weight: bold;
+	width: 90%;
+	margin: auto;
+}
+
+#credits-div {
+	background: rgba(0, 0, 0, 0.8);
+	padding: 10px 20px 0;
+	position: fixed;
+	bottom: 5px;
+	right: 25px;
+	display: flex;
+}
+
+#credits-div a {
+	color: white;
+	text-decoration: underline;
 }
 
 /* WELCOME PAGE */
@@ -26,26 +44,20 @@ h1 {
 #start, #pause {
 	margin: auto;
 	margin-top: 20px;
-	background-color: rgb(35, 188, 196);
-	border: none;
-	/* background-color: rgb(241, 90, 118); */
+	background-color: rgb(56, 241, 220);
+	color: black;
+	border: black;
 }
 
 #start:hover {
-	background-color: rgb(29, 181, 192);
+	background-color: rgb(50, 209, 230);
 }
 
 /* QUIZ PAGE */
 #timer-display {
-	/* background-color: rgb(46, 204, 188); */
-	/* background-color: rgb(24, 93, 173); */
-	/* background-color: #377BB5; */
-	/* border-top: 2px solid rgb(214, 214, 214); */
-	/* border-bottom: 2px solid rgb(214, 214, 214); */
-	/* border-radius: 7px; */
-	/* color: white; */
-	border-top: 2px solid #377BB5;
-	border-bottom: 2px solid #377BB5;
+	border-top: 2px solid rgb(56, 241, 220);
+	border-bottom: 2px solid rgb(56, 241, 220);
+	color: rgb(56, 241, 220);
 	padding: 10px;
 	margin-top: 30px !important;
 	width: 40%;
@@ -85,12 +97,13 @@ h4 {
 }
 
 #done {
-	background-color: rgb(35, 188, 196);
-	border: none;
+	background-color: rgb(56, 241, 220);
+	color: black;
+	border: black;
 }
 
 #done:hover {
-	background-color: rgb(29, 181, 192);
+	background-color: rgb(50, 209, 230);
 }
 
 /* RESULTS PAGE */
@@ -105,10 +118,11 @@ h4 {
 }
 
 #reset {
-	background-color: rgb(35, 188, 196);
-	border: none;
+	background-color: rgb(56, 241, 220);
+	color: black;
+	border: black;
 }
 
 #reset:hover {
-	background-color: rgb(29, 181, 192);
+	background-color: rgb(50, 209, 230);
 }
