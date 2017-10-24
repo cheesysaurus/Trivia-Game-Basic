@@ -31,8 +31,13 @@ h1 {
 }
 
 #credits-div a {
-	color: white;
+	color: rgb(76, 56, 255);
 	text-decoration: underline;
+}
+
+#credits-div a:hover {
+	/* color: rgb(3, 213, 250); */
+	color: rgb(56, 241, 220);
 }
 
 /* WELCOME PAGE */
