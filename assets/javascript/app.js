@@ -21,7 +21,7 @@ var quizAnswers = [ "D", "A", "C", "B", "C"];
 var hasSubmitted = false;
 
 // timer
-var timeRemaining = 30;
+var timeRemaining = 5;
 var intervalId; // variable to store setInterval
 var isCounting = false; // variable to signal if timer is running
 var countdownAudio = $("#countdown-audio")[0];
@@ -40,11 +40,6 @@ function count() {
 
 	// if time runs out before user finishes/submits answers
 	if (timeRemaining === 0 && !hasSubmitted) {
-
-		// reset these variables on each click so they don't keep aggregating each time the time runs out
-		correct = 0;
-		incorrect = 0;
-		unanswered = 0;
 
 		// stop timer
 		stopTimer();
@@ -134,12 +129,6 @@ function submitted() {
 	// prevent form from automatically refreshing upon submit
 	event.preventDefault();
 
-	// reset these variables on each click so they don't keep aggregating if
-	// the user decides to click the button multiple times
-	correct = 0;
-	incorrect = 0;
-	unanswered = 0;
-
 	// stop timer
 	stopTimer();
 
@@ -161,6 +150,11 @@ function submitted() {
 
 // initialize/show quiz each time user starts game
 function initGame() {
+
+	// reset these variables on each click so they don't keep aggregating each time the time runs out (i.e. if user runs out of time multiple times) or if user clicks on the submit button multiple times
+	correct = 0;
+	incorrect = 0;
+	unanswered = 0;
 	
 	// hide welcome page
 	$("#welcome-div").css("display", "none");
@@ -197,7 +191,7 @@ function resetGame() {
 	// reset timer display to initial time
 	$("#time-remaining").html("30");
 	// reset timer to initial time
-	timeRemaining = 30;
+	timeRemaining = 5;
 
 	// display welcome page
 	$("#welcome-div").css("display", "unset");
