@@ -1,34 +1,63 @@
 /* GENERAL */
 #bootstrap-override {
-	font-family: 'Montserrat', sans-serif;
-	/* background-image: url("../images/background/1.jpg"); */
+	font-family: 'Varela Round', 'Montserrat', sans-serif;
+	background-image: url("../images/background/7.jpg");
 	background-size: cover;
 }
 
 .jumbotron {
 	width: 75%;
 	margin: 60px auto;
-	padding: 30px;
-	/* background: rgb(19, 255, 224); */
+	padding: 40px;
+	padding-bottom: 60px;
+	/* border: 6px solid grey; */
+}
+
+h1 {
+	font-family: 'Fascinate Inline', sans-serif;
 }
 
 /* WELCOME PAGE */
-#welcome-div {
-	padding: 40px;
-}
 #welcome {
+	padding-top: 20px;
 	font-size: 20px;
 }
 
-/* QUIZ PAGE */
 #start, #pause {
-	width: 70px;
-	margin: 15px auto;
+	margin: auto;
+	margin-top: 20px;
+	background-color: rgb(35, 188, 196);
+	border: none;
+	/* background-color: rgb(241, 90, 118); */
+}
+
+#start:hover {
+	background-color: rgb(29, 181, 192);
+}
+
+/* QUIZ PAGE */
+#timer-display {
+	/* background-color: rgb(46, 204, 188); */
+	/* background-color: rgb(24, 93, 173); */
+	/* background-color: #377BB5; */
+	border-top: 2px solid #377BB5;
+	border-bottom: 2px solid #377BB5;
+	/* border-top: 2px solid rgb(214, 214, 214); */
+	/* border-bottom: 2px solid rgb(214, 214, 214); */
+	/* border-radius: 7px; */
+	padding: 10px;
+	margin-top: 30px !important;
+	width: 250px;
+	margin: auto;
+	/* color: white; */
+	font-size: 20px;
+	font-family: 'Fjalla One', serif;
 }
 
 #divider {
 	visibility: hidden;
 	margin-bottom: 5px;
+	width: 470px;
 }
 
 #timer {
@@ -37,6 +66,10 @@
 
 #quiz-div {
 	display: none;
+}
+
+h4 {
+	font-weight: bold;
 }
 
 .question {
@@ -51,6 +84,15 @@
 	bottom: -40px;
 }
 
+#done {
+	background-color: rgb(35, 188, 196);
+	border: none;
+}
+
+#done:hover {
+	background-color: rgb(29, 181, 192);
+}
+
 /* RESULTS PAGE */
 #results-div {
 	display: none;
@@ -60,4 +102,13 @@
 	text-align: center;
 	font-size: 20px;
 	padding: 20px;
+}
+
+#reset {
+	background-color: rgb(35, 188, 196);
+	border: none;
+}
+
+#reset:hover {
+	background-color: rgb(29, 181, 192);
 }
