@@ -4,6 +4,9 @@
 // 3) Not all stack overflow answers are necessarily correct. Test it out for yourself 
 // // maybe on jsfiddle or jsbin before using
 
+// Residual questions/issues:
+// 1) How to make capturing the value of each input into a function (lines 202-230)
+
 
 // GLOBAL VARIABLES
 // ========================================================================================
@@ -21,6 +24,7 @@ var hasSubmitted = false;
 var timeRemaining = 30;
 var intervalId; // variable to store setInterval
 var isCounting = false; // variable to signal if timer is running
+var countdownAudio = $("#countdown-audio")[0];
 
 
 // FUNCTIONS
@@ -47,6 +51,14 @@ function count() {
 
 		// display the results of the quiz
 		displayResults();
+
+		// console insight
+		hasSubmitted = false;
+		console.log("================================");
+		console.log(userAnswers);
+		console.log(quizAnswers);
+		console.log("Timer is running: " + isCounting);
+		console.log("User has submitted answers: " + hasSubmitted);
 	}
 
 }
@@ -54,11 +66,24 @@ function count() {
 function startTimer() {
 	intervalId = setInterval(count, 1000);
 	isCounting = true;
+
+	// play countdown audio
+	countdownAudio.load();
+	countdownAudio.play();
+
+	// show audio icon
+	$("i").css("display", "unset");
 }
 
 function stopTimer() {
 	clearInterval(intervalId);
 	isCounting = false;
+
+	// stop countdown audio
+	countdownAudio.pause();
+
+	// hide audio icon
+	$("i").css("display", "none");
 }
 
 // compare user's answers with the correct answers
@@ -154,6 +179,7 @@ function resetGame() {
 
 	// reset form
 	$("#quiz-form")[0].reset();
+	hasSubmitted = false;
 	// reset user's answers
 	userAnswers = ["", "", "", "", ""];
 

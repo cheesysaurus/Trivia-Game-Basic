@@ -7,6 +7,9 @@
 
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Fascinate+Inline|Fjalla+One|Varela+Round" rel="stylesheet">
+
+	<!-- Font Awesome -->
+	<script src="https://use.fontawesome.com/66533346b7.js"></script>
 	
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -36,7 +39,7 @@
 				<!-- <button id="start" class="btn btn-success">Start</button> -->
 				<!-- <button id="pause" class="btn btn-danger">Pause</button> -->
 
-				<h2 id="timer-display" class="text-primary">Time Remaining: <span id="time-remaining">30</span></h2>
+				<h2 id="timer-display" class="text-primary">Time Remaining: <span id="time-remaining">30</span> <i class="fa fa-volume-up" aria-hidden="false"></i></h2>
 			</div>
 
 			<!-- <hr id="divider" /> -->
@@ -165,6 +168,11 @@
 				<button id="reset" class="btn btn-primary">Reset</button>
 			</div>
 			
+			<!-- Countdown Audio -->
+			<audio id="countdown-audio" preload="auto">
+				<source src="./assets/audio/jeopardy-countdown.m4a" type="audio/mpeg" />
+			</audio>
+
 		</div>
 
 
